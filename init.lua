@@ -19,7 +19,7 @@ if not vim.loop.fs_stat(lazypath) then
 	--  }, true, {})
 	--  vim.fn.getchar()
 	--  os.exit(1)
-	--end
+	--en
 end
 vim.opt.rtp:prepend(lazypath)
 --lazypath
