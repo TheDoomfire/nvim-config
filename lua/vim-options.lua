@@ -8,5 +8,7 @@ vim.cmd("set mouse=a")
 vim.cmd("set autoindent")
 vim.cmd("set smarttab")
 vim.cmd("set encoding=UTF-8")
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.cmd("set clipboard=unnamedplus")
+vim.opt.spell = true
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "

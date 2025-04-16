@@ -5,7 +5,7 @@ return {
   priority = 1000,
   config = function()
     require("catppuccin").setup({
-      flavour = "Mocha",
+      flavour = "mocha",
       --transparent_background = true,
       styles = { 
         comments = { "italic" }, 
@@ -13,9 +13,10 @@ return {
     })
     
 
-    vim.cmd.colorscheme "catppuccin"
+    --vim.cmd.colorscheme "catppuccin"
+    --vim.cmd("colorscheme catppuccin")
     --vim.o.termguicolors = true
     --vim.o.background = "dark"
-    --vim.cmd[[colorscheme catppuccin]]
+    vim.cmd[[colorscheme catppuccin]]
   end
 }

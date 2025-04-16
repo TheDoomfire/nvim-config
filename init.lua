@@ -30,6 +30,7 @@ vim.opt.rtp:prepend(lazypath)
 -- vim.g.maplocalleader = "\\"
 
 require("vim-options")
+require("keymaps")
 --require("plugins")
 require("lazy").setup("plugins")
 --require("lazy").setup({
