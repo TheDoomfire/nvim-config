@@ -10,8 +10,12 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.djlint.with({
+					extra_args = { "--profile=nunjucks" }, -- Critical for Nunjucks
+				}),
 				--null_ls.builtins.formatting.ruff,
 				--null_ls.builtins.diagnostics.eslint_d,
+				--require("none-ls.diagnostics.jinja-lsp"),
 				require("none-ls.diagnostics.eslint_d"),
 				require("none-ls.diagnostics.ruff"),
 				require("none-ls.formatting.ruff"),
