@@ -42,5 +42,14 @@ Write to file, format/lint, push to git.
 
 ## Keys
 
+1. :q - closes
+1. :w - writes/saves
+
 1. dd - deletes the line.
 1. yyp - yank line + past down.
+
+1. :vnew - new window
+1. ctrl+w - switches.
+1. ctrl+w+c - closes window.
+
+1. gt - switches tabs.
