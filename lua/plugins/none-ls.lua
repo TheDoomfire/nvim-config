@@ -34,6 +34,7 @@ return {
           vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = bufnr,
             callback = function()
+              vim.cmd("silent! undojoin")
               vim.lsp.buf.format({ bufnr = bufnr })
             end,
           })
