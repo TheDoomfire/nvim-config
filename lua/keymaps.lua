@@ -1,5 +1,8 @@
+-- Copy/Paste
 --vim.keymap.set("v", "<leader>y", '"+y', { noremap = true })
 --vim.keymap.set("n", "<leader>p", '"+p', { noremap = true })
+
+-- BUILT-IN
 
 -- Select all with Alt+a.
 vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true, desc = "Select all" })

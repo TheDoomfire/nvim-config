@@ -8,16 +8,17 @@ Learn vim motions.
 
 ### Add these
 
+**General**
+
 - **Auto imports** - Auto add imports if I type a function name.
 - **Git pull** - Auto pull on start (if no conflicts).
 - **Show vim modes more clearly** I only show at bottom but perhaps on top too and maybe somewhere else?
-- **Tabs** to switch faster. And to remember what I worked on last time.
 - **List all projects** that have a .git folder? So I can pick what to work on today.
-- **Have more files open** at the same time + maybe terminal open? So I can works on related components easier.
 - **Easy Git** I do git push/pull daily. Hopefully somewhere where the commands is saved if I have to do stuff I dont do reguarly.
-- **Python .venv at start** I want my virtual enviroment to just work on start.
-- **Comment out a line?** Using: vim-commentary
-- **Split Window** to work in split screen.
+
+**Python**
+
+- **.venv at start** I want my virtual enviroment to just work on start.
 
 **Start**
 Choose project, open projects with everything open.
