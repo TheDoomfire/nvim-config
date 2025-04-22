@@ -30,7 +30,6 @@ vim.opt.rtp:prepend(lazypath)
 -- vim.g.maplocalleader = "\\"
 
 -- FROM FILES INSIDE OF LUA FOLDER
-
 -- Load the auto-pull module on startup
 vim.api.nvim_create_autocmd("VimEnter", {
 	pattern = "*",
@@ -42,4 +41,12 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 require("vim-options")
 require("keymaps")
+
+-- require("commands")
+-- Load all command files (same pattern as plugins)
+local command_files = vim.fn.globpath(vim.fn.stdpath("config") .. "/lua/commands", "*.lua", true, true)
+for _, file in ipairs(command_files) do
+	local module = "commands." .. vim.fn.fnamemodify(file, ":t:r")
+	pcall(require, module) -- Load safely
+end
 require("lazy").setup("plugins")

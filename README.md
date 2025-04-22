@@ -50,10 +50,17 @@ Write to file, format/lint, push to git.
 1. yyp - yank line + past down.
 1. ciw - change word.
 
+**Windows**
+
 1. :vnew - new window
 1. ctrl+w - switches.
 1. ctrl+w+c - closes window.
 1. CTRL+w+T - moves window to tab.
+1. - x - Swaps window to the next window.
+1. - - (hjkl) - move to h, j, k, l.
+1. - - (r/R) - Rotate clockwise/counter-clockwise.
+
+**Tabs**
 
 1. :tabnew - new tab.
 1. gt - switches tabs.
