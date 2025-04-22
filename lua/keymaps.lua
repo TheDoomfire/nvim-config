@@ -4,14 +4,41 @@
 
 -- BUILT-IN
 
+-- From the Vim wiki: https://bit.ly/4eLAARp
+-- Search and replace word under the cursor
+vim.keymap.set("n", "<Leader>r", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]])
+
+-- Duplicate a line and comment out the first line
+vim.keymap.set("n", "yc", "yygccp", { remap = true })
+
+-- Copy word.
+vim.keymap.set("n", "<C-c>", "ciw")
+
 -- Select all with Alt+a.
 vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true, desc = "Select all" })
 
 -- Move lines with Alt+Up/Down
-vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
-vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
-vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
-vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+-- vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
+-- vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
+-- vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+-- vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+
+vim.keymap.set("n", "<A-Down>", ":m .+1<cr>==", { noremap = true, silent = true, desc = "Move line down" })
+vim.keymap.set("n", "<A-Up>", ":m .-2<cr>==", { noremap = true, silent = true, desc = "Move line up" })
+vim.keymap.set(
+	"i",
+	"<A-Up>",
+	"<Esc>:m .+1<cr>==gi",
+	{ noremap = true, silent = true, desc = "Move line down (insert mode)" }
+)
+vim.keymap.set(
+	"i",
+	"<A-Down>",
+	"<Esc>:m .-2<cr>==gi",
+	{ noremap = true, silent = true, desc = "Move line up (insert mode)" }
+)
+vim.keymap.set("x", "<A-Up>", ":m '>+1<cr>gv=gv", { noremap = true, silent = true, desc = "Move block down" })
+vim.keymap.set("x", "<A-Down>", ":m '<-2<cr>gv=gv", { noremap = true, silent = true, desc = "Move block up" })
 
 -- Copy lines with Alt+Shift+Up/Down
 vim.keymap.set("n", "<A-S-Up>", ":copy .-1<CR>", { desc = "Copy line up" })
