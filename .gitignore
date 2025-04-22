@@ -1,2 +1,3 @@
+# Ignore project-specific files
 lazy-lock.json
 .luarc.json

@@ -8,7 +8,6 @@ return {
 
     null_ls.setup({
       sources = {
-        -- FORMATTING
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.prettier,
         require("none-ls.formatting.ruff"),
@@ -19,14 +18,16 @@ return {
         require("none-ls.diagnostics.ruff"),
 
         -- CODE ACTIONS
-        --null_ls.builtins.code_actions.eslint_d, -- Auto-fix ESLint errors
         null_ls.builtins.code_actions.gitsigns, -- Git conflict resolution
+        require("none-ls.code_actions.eslint_d"),
+        --require("none-ls.code_actions.ruff"),
 
         -- HOVER
         null_ls.builtins.hover.dictionary, -- Word definitions
         null_ls.builtins.hover.printenv, -- Environment variable info
 
-        --null_ls.builtins.completion.spell,
+        -- COMPLETION
+        null_ls.builtins.completion.spell,
       },
       -- Set up format on save
       on_attach = function(client, bufnr)
@@ -39,9 +40,27 @@ return {
             end,
           })
         end
+
+        -- Code actions
+        vim.keymap.set(
+          "n",
+          "<leader>ca",
+          vim.lsp.buf.code_action,
+          { buffer = bufnr, desc = "Code actions" } -- buffer = bufnr makes it buffer-local
+        )
+        vim.keymap.set("n", "<leader>af", function()
+          vim.lsp.buf.code_action({ apply = true }) -- Auto-apply first fix
+        end, { buffer = bufnr, desc = "Auto-fix" })
+
+        -- Hover keymap (standard Neovim LSP binding)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, {
+          buffer = bufnr, -- Buffer-local
+          desc = "Show hover documentation/actions",
+        })
       end,
       debug = true,
     })
+
     -- Fallback if format on save is not working.
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
   end,
