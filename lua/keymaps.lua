@@ -14,6 +14,13 @@ vim.keymap.set("n", "yc", "yygccp", { remap = true })
 -- Copy word.
 vim.keymap.set("n", "<C-c>", "ciw")
 
+-- Search within visual selection
+--vim.keymap.set("x", "/", "<Esc>/\\%V")
+
+-- Search for visually selected text with */# (like normal * but for visual selections)
+--vim.keymap.set("x", "<leader>/", [["y/<C-R>y<CR>]])
+vim.keymap.set("x", "<leader>/", 'y/\\V<C-r>"<CR>', { noremap = true, silent = true })
+
 -- Select all with Alt+a.
 vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true, desc = "Select all" })
 
@@ -26,16 +33,16 @@ vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true, desc = "Select all" })
 vim.keymap.set("n", "<A-Down>", ":m .+1<cr>==", { noremap = true, silent = true, desc = "Move line down" })
 vim.keymap.set("n", "<A-Up>", ":m .-2<cr>==", { noremap = true, silent = true, desc = "Move line up" })
 vim.keymap.set(
-	"i",
-	"<A-Up>",
-	"<Esc>:m .+1<cr>==gi",
-	{ noremap = true, silent = true, desc = "Move line down (insert mode)" }
+  "i",
+  "<A-Up>",
+  "<Esc>:m .+1<cr>==gi",
+  { noremap = true, silent = true, desc = "Move line down (insert mode)" }
 )
 vim.keymap.set(
-	"i",
-	"<A-Down>",
-	"<Esc>:m .-2<cr>==gi",
-	{ noremap = true, silent = true, desc = "Move line up (insert mode)" }
+  "i",
+  "<A-Down>",
+  "<Esc>:m .-2<cr>==gi",
+  { noremap = true, silent = true, desc = "Move line up (insert mode)" }
 )
 vim.keymap.set("x", "<A-Up>", ":m '>+1<cr>gv=gv", { noremap = true, silent = true, desc = "Move block down" })
 vim.keymap.set("x", "<A-Down>", ":m '<-2<cr>gv=gv", { noremap = true, silent = true, desc = "Move block up" })
@@ -48,6 +55,7 @@ vim.keymap.set("v", "<A-S-Up>", ":copy '<-1<CR>gv", { desc = "Copy selection up"
 vim.keymap.set("v", "<A-S-Down>", ":copy '><CR>gv", { desc = "Copy selection down" })
 
 -- Swap windows with Shift + Arrow Keys
+-- TODO: perhaps have them just work with <C-w>Left/Right/Up/Down
 vim.api.nvim_set_keymap("n", "<S-Left>", "<C-w>H", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Right>", "<C-w>L", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", "<C-w>J", { noremap = true, silent = true })
