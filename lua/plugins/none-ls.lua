@@ -18,7 +18,7 @@ return {
         require("none-ls.diagnostics.ruff"),
 
         -- CODE ACTIONS
-        null_ls.builtins.code_actions.gitsigns, -- Git conflict resolution
+        -- null_ls.builtins.code_actions.gitsigns, -- Git conflict resolution
         require("none-ls.code_actions.eslint_d"),
         --require("none-ls.code_actions.ruff"),
 
@@ -30,16 +30,16 @@ return {
         null_ls.builtins.completion.spell,
       },
       -- Set up format on save
-      -- on_attach = function(client, bufnr)
-      --   if client.supports_method("textDocument/formatting") then
-      --     vim.api.nvim_create_autocmd("BufWritePre", {
-      --       buffer = bufnr,
-      --       callback = function()
-      --         vim.cmd("silent! undojoin")
-      --         vim.lsp.buf.format({ bufnr = bufnr })
-      --       end,
-      --     })
-      --   end
+      on_attach = function(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+              -- vim.cmd("silent! undojoin")
+              -- vim.lsp.buf.format({ bufnr = bufnr })
+            end,
+          })
+        end
 
         -- Code actions
         vim.keymap.set(

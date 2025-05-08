@@ -10,11 +10,16 @@ Learn vim motions.
 
 **General**
 
-- **Auto imports** - Auto add imports if I type a function name.
+- **Auto imports** - Auto add imports if I type a function name. Or just warn and let me choose what to import.
 - **Git pull** - Auto pull on start (if no conflicts).
 - **Show vim modes more clearly** I only show at bottom but perhaps on top too and maybe somewhere else?
 - **List all projects** that have a .git folder? So I can pick what to work on today.
 - **Easy Git** I do git push/pull daily. Hopefully somewhere where the commands is saved if I have to do stuff I dont do reguarly.
+- **Close Brackets** - Close for example a function, so the code dont show up.
+- **Multiline edit** - Edit multiple lines at once.
+
+
+
 
 **Python**
 
