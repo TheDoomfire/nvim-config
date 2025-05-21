@@ -31,13 +31,13 @@ vim.opt.rtp:prepend(lazypath)
 
 -- FROM FILES INSIDE OF LUA FOLDER
 -- Load the auto-pull module on startup
-vim.api.nvim_create_autocmd("VimEnter", {
-	pattern = "*",
-	callback = function()
-		require("auto-pull").auto_pull()
-	end,
-	once = true, -- Only run once per Neovim instance
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		require("auto-pull").auto_pull()
+-- 	end,
+-- 	once = true, -- Only run once per Neovim instance
+-- })
 
 require("vim-options")
 require("keymaps")

@@ -18,7 +18,7 @@ Learn vim motions.
 - **Close Brackets** - Close for example a function, so the code dont show up.
 - **Multiline edit** - Edit multiple lines at once.
 
-
+- **Auto Sessions** add this on start :lua MiniSessions.write("main") it can be any name! But only need to run if Sessions.vim dosn't exist.
 
 
 **Python**

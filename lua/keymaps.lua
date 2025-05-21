@@ -1,3 +1,12 @@
+function Map(mode, lhs, rhs, opts)
+    local options = { noremap = true, silent = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.keymap.set(mode, lhs, rhs, options)
+end
+vim.g.mapleader = " "
+
 -- Copy/Paste
 --vim.keymap.set("v", "<leader>y", '"+y', { noremap = true })
 --vim.keymap.set("n", "<leader>p", '"+p', { noremap = true })
@@ -24,6 +33,17 @@ vim.keymap.set("x", "<leader>/", 'y/\\V<C-r>"<CR>', { noremap = true, silent = t
 -- Select all with Alt+a.
 vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true, desc = "Select all" })
 
+-- Re size windows
+Map("n", "<C-Up>", ":resize -2<CR>")
+Map("n", "<C-Down>", ":resize +2<CR>")
+Map("n", "<C-Left>", ":vertical resize -2<CR>")
+Map("n", "<C-Right>", ":vertical resize +2<CR>")
+
+-- terminal
+Map("t", "<C-Up>", "<cmd>resize -2<CR>")
+Map("t", "<C-Down>", "<cmd>resize +2<CR>")
+Map("t", "<C-Left>", "<cmd>vertical resize -2<CR>")
+Map("t", "<C-Right>", "<cmd>vertical resize +2<CR>")
 -- Move lines with Alt+Up/Down
 -- vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
 -- vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
