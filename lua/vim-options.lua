@@ -16,6 +16,8 @@ vim.g.maplocalleader = " "
 --  - Folding -
 -- vim.opt.foldmethod = "syntax"
 vim.opt.foldenable = true
+-- vim.opt.foldcolumn = "0"
 vim.opt.foldcolumn = "1"
+
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99 -- Start with all folds open
