@@ -12,3 +12,10 @@ vim.cmd("set clipboard=unnamedplus")
 vim.opt.spell = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+--  - Folding -
+-- vim.opt.foldmethod = "syntax"
+vim.opt.foldenable = true
+vim.opt.foldcolumn = "1"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99 -- Start with all folds open
