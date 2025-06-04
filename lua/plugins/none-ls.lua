@@ -64,5 +64,6 @@ return {
 
     -- Fallback if format on save is not working.
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    -- TODO: Add format when leaving window or quit. To have a auto formatting.
   end,
 }
