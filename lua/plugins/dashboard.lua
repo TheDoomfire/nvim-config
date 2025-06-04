@@ -2,6 +2,7 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
+dependencies = { "rmagatti/auto-session" },
 	--@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
@@ -34,7 +35,7 @@ return {
 						key = "s",
 						desc = "Sessions (not working)",
 						section = "session",
-						action = ":SessionSearch",
+action = ":SessionSearch<CR>"
 					},
 					{
 						icon = "󰒲 ",

@@ -1,3 +1,4 @@
+-- File tree when I press "Ctrl+n"
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
@@ -20,7 +21,7 @@ return {
 		-- }
 		require("neo-tree").setup({
 			follow_current_file = true,
-			sources = { "filesystem", "buffers" }, -- Shows them in tabview.
+            sources = { "filesystem", "buffers" }, -- Shows them in tabview.
 			source_selector = {
 				winbar = true, -- Show source tabs in the winbar
 				content_layout = "start", -- Start content after the source tabs
@@ -31,13 +32,17 @@ return {
 			},
 			filesystem = {
 				visible = true,
-				follow_current_file = true,
+				follow_current_file = {
+enable = true,
+        },
 				-- show_hidden = false,
 				--hide_dotfiles = false,
 				----hide_gitignored = false,
 			},
 			buffers = {
-				follow_current_file = true,
+				follow_current_file = {
+enable = true,
+        },
 				show_unloaded = true,
 			},
 		})

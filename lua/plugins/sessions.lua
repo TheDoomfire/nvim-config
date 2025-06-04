@@ -12,8 +12,13 @@ return {
         previewer = false, -- File preview for session picker
 -- auto_restore_last_session = false, -- On startup, loads the last saved session if session for cwd does not exist
       },
-      -- All sessions. TODO: Add to dashboard?
+
+     -- List Sessions - Shows all the sessions.
       vim.keymap.set("n", "<Leader>ls", require("auto-session.session-lens").search_session, { noremap = true }),
+          -- Create a custom command to list sessions
+    vim.api.nvim_create_user_command("SessionSearch", function()
+      require("auto-session.session-lens").search_session()
+    end, {}),
     })
   end,
 }
