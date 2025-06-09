@@ -50,6 +50,7 @@ Map("t", "<C-Right>", "<cmd>vertical resize +2<CR>")
 -- vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 
+
 vim.keymap.set("n", "<A-Down>", ":m .+1<cr>==", { noremap = true, silent = true, desc = "Move line down" })
 vim.keymap.set("n", "<A-Up>", ":m .-2<cr>==", { noremap = true, silent = true, desc = "Move line up" })
 vim.keymap.set(
@@ -80,3 +81,7 @@ vim.api.nvim_set_keymap("n", "<S-Left>", "<C-w>H", { noremap = true, silent = tr
 vim.api.nvim_set_keymap("n", "<S-Right>", "<C-w>L", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", "<C-w>J", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Up>", "<C-w>K", { noremap = true, silent = true })
+
+-- Indent with Tab in visual mode
+Map('v', '<Tab>',   '>gv')
+Map('v', '<S-Tab>', '<gv')
