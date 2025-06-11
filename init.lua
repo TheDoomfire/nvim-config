@@ -40,7 +40,6 @@ vim.opt.rtp:prepend(lazypath)
 -- })
 
 require("vim-options")
-require("keymaps")
 
 -- require("commands")
 -- Load all command files (same pattern as plugins)
@@ -50,3 +49,5 @@ for _, file in ipairs(command_files) do
 	pcall(require, module) -- Load safely
 end
 require("lazy").setup("plugins")
+
+require("keymaps")

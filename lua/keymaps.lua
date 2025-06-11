@@ -21,7 +21,7 @@ vim.keymap.set("n", "<Leader>r", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]])
 vim.keymap.set("n", "yc", "yygccp", { remap = true })
 
 -- Copy word.
-vim.keymap.set("n", "<C-c>", "ciw")
+-- vim.keymap.set("n", "<C-c>", "ciw")
 
 -- Search within visual selection
 --vim.keymap.set("x", "/", "<Esc>/\\%V")
@@ -69,11 +69,11 @@ vim.keymap.set("x", "<A-Up>", ":m '>+1<cr>gv=gv", { noremap = true, silent = tru
 vim.keymap.set("x", "<A-Down>", ":m '<-2<cr>gv=gv", { noremap = true, silent = true, desc = "Move block up" })
 
 -- Copy lines with Alt+Shift+Up/Down
-vim.keymap.set("n", "<A-S-Up>", ":copy .-1<CR>", { desc = "Copy line up" })
-vim.keymap.set("n", "<A-S-Down>", ":copy .<CR>", { desc = "Copy line down" })
-vim.keymap.set("v", "<A-S-Down>", ":copy '><CR>gv", { desc = "Copy selection down" })
-vim.keymap.set("v", "<A-S-Up>", ":copy '<-1<CR>gv", { desc = "Copy selection up" })
-vim.keymap.set("v", "<A-S-Down>", ":copy '><CR>gv", { desc = "Copy selection down" })
+Map("n", "<A-S-Up>", ":copy .-1<CR>", { desc = "Copy line up" })
+Map("n", "<A-S-Down>", ":copy .<CR>", { desc = "Copy line down" })
+Map("v", "<A-S-Down>", ":copy '><CR>gv", { desc = "Copy selection down" })
+Map("v", "<A-S-Up>", ":copy '<-1<CR>gv", { desc = "Copy selection up" })
+Map("v", "<A-S-Down>", ":copy '><CR>gv", { desc = "Copy selection down" })
 
 -- Swap windows with Shift + Arrow Keys
 -- TODO: perhaps have them just work with <C-w>Left/Right/Up/Down
