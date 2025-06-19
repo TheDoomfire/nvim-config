@@ -26,36 +26,40 @@ return {
       })
       lspconfig.jinja_lsp.setup({
         capabilities = capabilities,
-        filetypes = { "jinja", "jinja.html", "njk", "nunjucks" },
-        settings = {
-          jinja_lsp = {
-            enableEmmet = true, -- Enable Emmet for HTML in Jinja files
-            jinjaPaths = {},
-            jinjaTriggerCharacters = { ".", "[" },
-          },
-        },
+        -- filetypes = { "jinja", "jinja.html", "njk", "nunjucks" },
+filetypes = { "html", "jinja", "njk" },
+init_options = {
+    enableEmmet = true
+  }
+        -- settings = {
+        --   jinja_lsp = {
+        --     enableEmmet = true, -- Enable Emmet for HTML in Jinja files
+        --     jinjaPaths = {},
+        --     jinjaTriggerCharacters = { ".", "[" },
+        --   },
+        -- },
       })
 
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
       })
-      lspconfig.html.setup({
-        capabilities = capabilities,
-        filetypes = {
-          "html",
-          "jinja",
-          "jinja.html",
-          "njk",
-          "nunjucks",
-        },
-        init_options = {
-          configurationSection = { "html", "css", "javascript" },
-          embeddedLanguages = {
-            css = true,
-            javascript = true,
-          },
-        },
-      })
+      -- lspconfig.html.setup({
+      --   capabilities = capabilities,
+      --   filetypes = {
+      --     "html",
+      --     "jinja",
+      --     "jinja.html",
+      --     "njk",
+      --     "nunjucks",
+      --   },
+      --   init_options = {
+      --     configurationSection = { "html", "css", "javascript" },
+      --     embeddedLanguages = {
+      --       css = true,
+      --       javascript = true,
+      --     },
+      --   },
+      -- })
       lspconfig.cssls.setup({})
       lspconfig.pyright.setup({
         capabilities = capabilities,
@@ -75,7 +79,8 @@ return {
       lspconfig.ruff.setup({})
       vim.filetype.add({
         extension = {
-          njk = "jinja.html",
+          -- njk = "jinja.html",
+          njk = "html",
         },
       })
       -- Add diagnostic filters for template tags
